@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_camera"
+            android:icon="@mipmap/ic_camera"
+            android:title="Scan" />
+        <item
+            android:id="@+id/nav_gallery"
+            android:icon="@mipmap/ic_camera"
+            android:title="View Past Scans" >
+
+            <menu>
+                <item
+                    android:icon="@mipmap/ic_camera"
+                    android:title="Title for scan 1" />
+                <item
+                    android:icon="@mipmap/ic_camera"
+                    android:title="Title for scan 2" />
+                <item
+                    android:icon="@mipmap/ic_camera"
+                    android:title="Title for scan 3" />
+
+            </menu>
+
+        </item>
+    </group>
+</menu>

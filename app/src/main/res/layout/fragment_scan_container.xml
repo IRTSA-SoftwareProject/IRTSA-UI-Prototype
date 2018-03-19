@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:orientation="vertical">
+
+    <FrameLayout
+        android:id="@+id/scanImageContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight=".65"></FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/scanControlsContainer"
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight=".35"></FrameLayout>
+
+</LinearLayout>
