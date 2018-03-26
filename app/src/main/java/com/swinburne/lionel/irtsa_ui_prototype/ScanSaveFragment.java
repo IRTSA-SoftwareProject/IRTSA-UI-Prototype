@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Lionel on 3/19/2018.
+ * This class represents the logic behind our saving fragment.
+ * All it does is inflate the layout file 'fragment_save_scan.xml' when the fragment is created.
  */
 
 public class ScanSaveFragment extends Fragment {
@@ -17,6 +18,4 @@ public class ScanSaveFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.fragment_save_scan, container, false);
     }
-
-
 }

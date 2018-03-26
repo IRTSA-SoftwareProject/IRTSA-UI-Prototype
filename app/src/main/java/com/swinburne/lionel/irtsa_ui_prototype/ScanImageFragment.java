@@ -8,7 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * Created by Lionel on 3/18/2018.
+ * This class represents the image fragment we insert into the top of our ScanFragmentContainer.
+ * All this class does is inflate the fragment_scan_image layout file which contains a single empty ImageView.
  */
 
 public class ScanImageFragment extends Fragment {

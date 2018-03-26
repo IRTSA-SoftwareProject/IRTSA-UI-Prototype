@@ -9,30 +9,26 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 /**
- * Created by Lionel on 3/18/2018.
+ * This class represents the Scan Controls fragment we insert into the bottom of our ScanFragmentContainer.
  */
 
 public class ScanControlsFragment extends Fragment {
 
-    Button mStartScanButton;
+    //Declare the button object that allows us to start a scan.
+    private Button mStartScanButton;
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View fragmentRootView = inflater.inflate(R.layout.fragment_scan_controls, container, false);
 
+        //Initialise the start scan button.
         mStartScanButton = fragmentRootView.findViewById(R.id.beginScanButton);
 
-
-
-        return fragmentRootView;
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
+        //Set the listener that listens to click on the start scan button.
         mStartScanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //Create and insert the 'Processing' fragment after we press the start scan button.
                 ScanProcessingFragment newFragment = new ScanProcessingFragment();
                 FragmentChangeListener fragmentChangeListener = (FragmentChangeListener)getActivity().getFragmentManager().
                         findFragmentById(R.id.content_frame);
@@ -40,5 +36,9 @@ public class ScanControlsFragment extends Fragment {
                 fragmentChangeListener.replaceFragment(newFragment);
             }
         });
+
+
+        return fragmentRootView;
     }
+
 }
