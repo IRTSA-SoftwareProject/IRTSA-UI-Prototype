@@ -14,7 +14,7 @@ import android.widget.Button;
 
 public class ScanControlsFragment extends Fragment {
 
-    //Declare the button object that allows us to start a scan.
+    //A member variable which represents the scan button.
     private Button mStartScanButton;
 
     @Nullable
@@ -22,13 +22,12 @@ public class ScanControlsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
         View fragmentRootView = inflater.inflate(R.layout.fragment_scan_controls, container, false);
 
-        //Initialise the start scan button.
         mStartScanButton = fragmentRootView.findViewById(R.id.beginScanButton);
 
-        //Set the listener that listens to click on the start scan button.
+        //Set the listener that listens for clicks on the start scan button.
         mStartScanButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                //Create and insert the 'Processing' fragment after we press the start scan button.
+                //Create and insert the 'Processing' fragment (into the bottom container) after we press the start scan button.
                 ScanProcessingFragment newFragment = new ScanProcessingFragment();
                 FragmentChangeListener fragmentChangeListener = (FragmentChangeListener)getActivity().getFragmentManager().
                         findFragmentById(R.id.content_frame);
@@ -36,8 +35,6 @@ public class ScanControlsFragment extends Fragment {
                 fragmentChangeListener.replaceFragment(newFragment);
             }
         });
-
-
         return fragmentRootView;
     }
 

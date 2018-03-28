@@ -15,22 +15,18 @@ import android.widget.ProgressBar;
 
 public class ScanProcessingFragment extends Fragment {
 
-    //Declare a variable that will reference the progress bar.
+    //A member variable to reference the progress bar.
     private ProgressBar mProgressBar;
 
-    //This method is called when this fragment is created. It returns the root view for this fragment (fragment_scan_processing.xml)
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        //Inflate our root view.
         View rootView = inflater.inflate(R.layout.fragment_scan_processing, container, false);
-        //Initialise our mProgressBar variable.
         mProgressBar = rootView.findViewById(R.id.scanProgressBar);
 
         return rootView;
     }
 
-    //This method is called once this fragment has been created.
     @Override
     public void onResume() {
         super.onResume();
@@ -38,7 +34,7 @@ public class ScanProcessingFragment extends Fragment {
         new processImage().execute("s"); //Execute our asynchronous task that simulates a delay.
     }
 
-    //An asynchronous task that simply simulates a 2.5 second pause before moving swapping to the 'save' fragment.
+    //An asynchronous task that simulates a 2.5 second pause before moving swapping to the 'save' fragment.
     private class processImage extends AsyncTask<String, Void, String> {
         @Override
         protected String doInBackground(String... imageInfo) {
@@ -50,13 +46,14 @@ public class ScanProcessingFragment extends Fragment {
             return null;
         }
 
-        //Once we are finished waiting the 2.5 seconds. Tell our root container to swap this fragment with the save scan fragment.
+        //Once we are finished waiting the 2.5 seconds. Tell our ScanFragmentContainer container to swap this fragment with the save scan fragment.
         @Override
         protected void onPostExecute(String s) {
             ScanSaveFragment newFragment = new ScanSaveFragment();
             FragmentChangeListener fragmentChangeListener = (FragmentChangeListener)getActivity().getFragmentManager().
                     findFragmentById(R.id.content_frame);
 
+            //Hardcoded in ScanFragmentContainer to only swap the lower fragment.
             fragmentChangeListener.replaceFragment(newFragment);
         }
     }

@@ -8,8 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * This class represents the logic behind our saving fragment.
- * All it does is inflate the layout file 'fragment_save_scan.xml' when the fragment is created.
+ * This class represents the fragment that contains the saving UI.
  */
 
 public class ScanSaveFragment extends Fragment {

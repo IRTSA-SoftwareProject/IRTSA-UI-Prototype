@@ -21,11 +21,10 @@ import android.view.ViewGroup;
 
 public class ScanFragmentContainer extends Fragment implements FragmentChangeListener {
 
-    //Declare the two fragments we will be inserting into our fragment container.
+    //Member variables representing the fragments that are initially inserted into the top and bottom containers.
     private ScanImageFragment mScanImageFragment;
     private ScanControlsFragment mScanControlsFragment;
 
-    //This method is called once our view is created.
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -34,27 +33,20 @@ public class ScanFragmentContainer extends Fragment implements FragmentChangeLis
         mScanImageFragment = new ScanImageFragment();
         mScanControlsFragment = new ScanControlsFragment();
 
-        /*
-        savedInstanceState is a variable that allows us to retain information when a screen is \
-        recreated. Here we check if savedInstanceState is null, if it is, the user has not yet
-        visited this screen and we insert our two fragments.
-         */
+        //Check if this is the first time we are loading this container. If it is, insert the two initial fragments.
         if (savedInstanceState == null) {
             getFragmentManager().beginTransaction().replace(R.id.scanImageContainer, mScanImageFragment).commit();
             getFragmentManager().beginTransaction().replace(R.id.scanControlsContainer, mScanControlsFragment).commit();
         }
 
-        //'Inflate' the layout file associated with ScanFragmentContainer.java
         return inflater.inflate(R.layout.fragment_scan_container, container, false);
     }
 
-
     /*
-      This class implements the 'FragmentChangeListener' interface.
-      The below method implements interface method 'replaceFragment'.
-      By implenting this method, we are able to swap the fragments in our containers.
-      Right now this method is hardcoded to always replace the FrameLayout with ID scanControlsContainer.
-     */
+      This method is inherited from the FragmentChangeListener interface.
+      It facilitates a child fragments ability to notify its parent fragment that it needs to swap a fragment in its container.
+      Currently limited to only change the fragment in the bottom container (image fragment is never swapped out).
+       */
     @Override
     public void replaceFragment(Fragment fragment) {
         FragmentManager fragmentManager = getFragmentManager();;
