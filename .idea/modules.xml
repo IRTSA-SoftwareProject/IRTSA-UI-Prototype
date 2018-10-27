@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/IRTSAUIPrototype.iml" filepath="$PROJECT_DIR$/IRTSAUIPrototype.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IRTSA-UI-Prototype.iml" filepath="$PROJECT_DIR$/IRTSA-UI-Prototype.iml" />
+      <module fileurl="file://C:\Users\Lionel\Desktop\Git\IRTSA-UI-Prototype\IRTSA-UI-Prototype.iml" filepath="C:\Users\Lionel\Desktop\Git\IRTSA-UI-Prototype\IRTSA-UI-Prototype.iml" />
+      <module fileurl="file://C:\Users\Lionel\Desktop\Project\IRTSA-UI-Prototype\IRTSAUIPrototype.iml" filepath="C:\Users\Lionel\Desktop\Project\IRTSA-UI-Prototype\IRTSAUIPrototype.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://C:\Users\Lionel\Desktop\Git\IRTSA-UI-Prototype\app\app.iml" filepath="C:\Users\Lionel\Desktop\Git\IRTSA-UI-Prototype\app\app.iml" />
     </modules>
   </component>
 </project>
